@@ -237,6 +237,7 @@ var BaseCanvas = function BaseCanvas(baseComponent, THREE) {
                 if (this.mouseDown) {
                     this.lon = (this.onPointerDownPointerX - clientX) * 0.2 + this.onPointerDownLon;
                     this.lat = (clientY - this.onPointerDownPointerY) * 0.2 + this.onPointerDownLat;
+                    this.player().trigger('MatrixDetected', this.camera.matrix);
                 }
             } else {
                 var x = event.pageX - this.el_.offsetLeft;
